@@ -61,10 +61,12 @@ void menu()
 		case 6:
 			buscarElemento();
 			break;
-
 		case 7:
 			exibirMenorValor();
-			return;
+			break;
+		case 8:
+			cout << "Saindo... \n";
+			break;
 		default:
 			break;
 		}
