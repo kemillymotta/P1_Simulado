@@ -77,7 +77,7 @@ void menu()
 void inicializar()
 {
 
-	// se a lista já possuir elementos
+	// se a lista j? possuir elementos
 	// libera a memoria ocupada
 
 	NO* aux = primeiro;
@@ -134,7 +134,7 @@ void inserirElemento()
 	cin >> novo->valor;
 	novo->prox = NULL;
 
-	// verifica se o elemento já existe na lista
+	// verifica se o elemento j? existe na lista
 	NO* aux = primeiro;
 	while (aux != NULL) {
 		if (aux->valor == novo->valor) {
@@ -190,11 +190,46 @@ void removerElemento() {
 
 void buscarElemento()
 {
+	if (primeiro == NULL) {
+		cout << "Lista vazia." << endl;
+		return;
+	}
 
+	int valor;
+	cout << "Digite o valor do elemento: ";
+	cin >> valor;
 
+	NO* aux = primeiro;
+	int pos = 1;
+
+	while (aux != NULL) {
+		if (aux->valor == valor) {
+			cout << "Elemento " << valor << " encontrado na posicao " << pos << endl;
+			return;
+		}
+		aux = aux->prox;
+		pos++;
+	}
+
+	cout << "Elemento nao encontrado." << endl;
 }
 
 void exibirMenorValor()
 {
+	if (primeiro == NULL) {
+		cout << "Lista vazia." << endl;
+		return;
+	}
 
+	NO* aux = primeiro;
+	int menor = aux->valor;
+
+	while (aux != NULL) {
+		if (aux->valor < menor) {
+			menor = aux->valor;
+		}
+		aux = aux->prox;
+	}
+
+	cout << "Menor valor: " << menor << endl;
 }
